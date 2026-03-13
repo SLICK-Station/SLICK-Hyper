@@ -1,20 +1,36 @@
-#!/bin/bash
+#!/bin/sh
 
 #Project dependencies file
 #Final authority on what's required to fully build the project
 
-# byond version
-# Extracted from the Dockerfile. Change by editing Dockerfile's FROM command.
-LIST=($(sed -n 's/.*byond:\([0-9]\+\)\.\([0-9]\+\).*/\1 \2/p' Dockerfile))
-export BYOND_MAJOR=${LIST[0]}
-export BYOND_MINOR=${LIST[1]}
-unset LIST
+# byond version. Also must be updated in .tgs.yml
+export BYOND_MAJOR=516
+export BYOND_MINOR=1659
 
 #rust_g git tag
-export RUST_G_VERSION=0.4.2
+export RUST_G_VERSION=4.2.0
 
-#bsql git tag
-export BSQL_VERSION=v1.4.0.0
+# node version
+export NODE_VERSION_LTS=22.11.0
 
-#node version (for tgui)
-export NODE_VERSION=12
+# Bun version
+export BUN_VERSION=1.3.5
+
+# SpacemanDMM git tag
+export SPACEMAN_DMM_VERSION=suite-1.11
+
+# Python version for mapmerge and other tools
+export PYTHON_VERSION=3.11.0
+
+#dreamluau repo
+export DREAMLUAU_REPO="tgstation/dreamluau"
+
+#dreamluau git tag
+export DREAMLUAU_VERSION=0.1.2
+
+#hypnagogic repo
+export CUTTER_REPO=spacestation13/hypnagogic
+
+#hypnagogic git tag
+export CUTTER_VERSION=v5.0.0
+
